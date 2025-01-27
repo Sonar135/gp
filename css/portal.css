@@ -1,0 +1,280 @@
+.header{
+    background: white;
+}
+
+.right_head ul li{
+    color:black;
+}
+
+.hero{
+    margin-top: 70px;
+    padding-top:1px;
+}
+
+.sec1{
+    width: 100%;
+    height:700px;
+    display:flex;
+    margin-top:50px;
+}
+
+
+.nav{
+    width:240px;
+}
+
+
+.nav ul{
+    width:100%;
+    height:100%;
+    padding:26px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.nav ul li{
+    display:flex;
+    align-items: center;
+    font-size:16px;
+    justify-content: flex-start;
+    padding:12px;
+    color:#72728f;
+    /* margin:45px 0; */
+}
+
+.nav span{
+    font-weight:800;
+}
+
+.nav ul li i{
+    font-size:24px;
+}
+
+
+.nav ul li span{
+    margin-left:12px;
+}
+
+.section{
+    width:1300px;
+    height:100%;
+    display:flex;
+    align-items: center;
+}
+
+.sec_block{
+    width:95%;
+    height:660px;
+    margin-left:20px;
+    background: #dfdfea;
+    padding:24px;
+}
+
+
+.profile{
+    width:100%;
+    height:100%;
+    display:none;
+}
+
+
+
+.personal{
+    width:100%;
+    height:300px;
+    display:flex;
+    background: white;
+    border-radius: 24px;
+    padding: 5px 0;
+}
+
+.left_p{
+    width:240px;
+    height:100%;
+    padding:26px;
+    border-right:1px solid rgba(0, 0, 0, 0.308);
+}
+
+.other{
+    width:900px;
+    height:100%;
+    display:flex;
+    flex-wrap: wrap;
+    margin-left:20px;
+    padding:0 24px;
+    justify-content: space-between;
+}
+
+
+.other_card{
+    width:180px;
+    height:60px;
+    margin:30px 0;
+    text-transform: capitalize;
+}
+
+
+.other p{
+    text-align:left;
+    color:rgba(0, 0, 0, 0.447);
+}
+
+.other h4{
+    text-align: left;
+    font-size:16px;
+    margin:10px 0;
+    font-weight:700;
+}
+
+.prof_pic{
+    width:90px;
+    height:90px;
+    border-radius: 60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--accent);
+}
+
+
+.prof_pic i{
+    color:white;
+    font-size:26px;
+}
+
+.left_p h1{
+    font-size:20px;
+    font-weight:700;
+    text-align: left;
+    margin:20px 0;
+}
+
+.left_p p{
+    text-align: left;
+    color: rgba(0, 0, 0, 0.537);
+    margin:20px 0;
+}
+
+.left_p a{
+    width:110px;
+    height:40px;
+    border-radius: 40px;
+    border: 1px solid var(--accent);
+    margin:20px 0;
+    color:var(--accent);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-weight:600;
+    transition: .2s ease;
+}
+
+.left_p a:hover{
+    color:white;
+    background: var(--accent);
+}
+
+
+
+.vital{
+    margin: 60px 20px 0 20px;
+    font-size:20px;
+    font-weight:800;
+}
+
+.vital_cont{
+    width:100%;
+    height:200px;
+    padding: 5px 0;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.vital_card{
+    width:250px;
+    height:100px;
+    border-radius: 24px;
+    background: white;
+    padding:16px;
+    text-transform: capitalize;
+}
+
+.vital_card h4{
+    text-align: left;
+    font-size:14px;
+    font-weight:700;
+}
+
+.vital_card h1{
+    text-align: left;
+    font-size:26px;
+    margin:14px 0;
+    font-weight:700;
+}
+
+.vital_card h1 span{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.507);
+}
+
+
+.app_block{
+    width:700px;
+    height:560px;
+    margin:50px auto;
+    box-shadow: var(--shadow);
+    background: white;
+    border-radius: 24px;
+    padding-top:20px;
+}
+
+.app_block h1{
+    text-align: center;
+    font-size:26px;
+    font-weight:700;
+}
+
+.apps{
+    width:100%;
+    height:480px;
+    margin-top:10px;
+    padding-top: 1px;
+}
+
+.app_card{
+    width:460px;
+    height:180px;
+    margin:20px auto;
+}
+
+.app_card h4{
+    text-align: center;
+    font-size:16px;
+    font-weight:800;
+    margin:16px 0;
+    color: #515271
+}
+
+.app_text{
+    width:380px;
+    height:120px;
+    margin:16px auto;
+    border-radius: 24px;
+    background: #f5f5f8;
+    color: #515271;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.app_text p{
+    text-align: left;
+    font-size:15px;
+    font-weight:700;
+    color: #515271;
+}
