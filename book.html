@@ -12,8 +12,8 @@
 <body>
 
     <div class="header">
-        <div class="left_head">
-
+        <div class="logo_cont">
+            <img src="images\IMG-20250208-WA0018-removebg-preview (1).png" alt="">
         </div>
 
         <div class="right_head">
@@ -31,21 +31,21 @@
     <div class="hero">
         <div class="sec1">
             <div class="cent">
-                <h1>book an appointment with us</h1>
+                <h1>State Your health Problem</h1>
 
-             <form action="" id="consult_form">  <div class="form_cont">
+             <form action="" id="book_form">  <div class="form_cont">
                     <div class="input_cont">
-                        <input type="text" placeholder="Full name">
+                        <input type="text" placeholder="Full name" name="name" readonly id="read">
                     </div>
 
                     <div class="input_cont">
-                        <input type="text" placeholder="Email">
-                        <input type="text" placeholder="Phone Number">
+                        <input type="text" placeholder="Email" name="email" readonly id="read">
+                        <input type="number" placeholder="Phone Number" name="phone" id="data">
                     </div>
 
-                    <textarea name="" id="" placeholder="Reason For Appointment (Symptomss or Concerns)"></textarea>
+                    <textarea name="text" id="data" placeholder="Symptoms or Concerns"></textarea>
 
-                    <h1>Consultation Type</h1>
+                    <!-- <h1>Consultation Type</h1>
                     <div class="input_cont">
                         <label for="virtual">
                             <input type="radio" name="type" id="virtual" value="virtual">
@@ -56,13 +56,15 @@
                             <input type="radio" name="type" id="physical" value="physical">
                             Physical
                         </label>
-                    </div>
+                    </div> -->
 
 
-                    <button>Submit</button>
+                    <button id="btn" disabled>Submit</button>
                 </div></form> 
             </div>
         </div>
     </div>
 </body>
+<script src="js/session.js"></script>
+<script src="js/book.js"></script>
 </html>

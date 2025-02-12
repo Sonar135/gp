@@ -11,8 +11,8 @@
 </head>
 <body>
     <div class="header">
-        <div class="left_head">
-
+        <div class="logo_cont">
+            <img src="images\IMG-20250208-WA0018-removebg-preview (1).png" alt="">
         </div>
 
         <div class="right_head">
@@ -31,18 +31,23 @@
         <div class="sec1">
             <div class="nav">
                 <ul>
-                    <li><i class="fa-regular fa-user"></i> <span>Profile</span></li>
-                    <li><i class="fa-regular fa-calendar-check"></i> <span>Appointments</span></li>
-                    <li><i class="fa-solid fa-capsules"></i><span>Prescriptions</span></li>
-                    <li><i class="fa-solid fa-stethoscope"></i></i> <span>Diagnosis</span></li>
+                    <li id="port_li"><i class="fa-regular fa-user"></i> <span>Profile</span></li>
+                    <li id="port_li"><i class="fa-regular fa-calendar-check"></i> <span>Appointments</span></li>
+                    <li id="port_li"><i class="fa-solid fa-stethoscope"></i></i> <span>Diagnosis</span></li>
                     <li><i class="fa-solid fa-file-waveform"></i> <span>Test Results</span></li>
-                    <li><i class="fa-solid fa-retweet"></i> <span>Referrals</span></li>
+                    <li id="port_li"><i class="fa-solid fa-capsules"></i><span>Prescriptions</span></li>
+                    <li id="port_li"><i class="fa-solid fa-retweet"></i> <span>Referrals</span></li>
                 </ul>
             </div>
 
             <div class="section">
                 <div class="sec_block">
-                    <div class="profile">
+                    <div class="load_overlay">
+                        <div class="loader">
+                            
+                        </div>
+                    </div>
+                    <div class="profile" id="port">
                         <div class="personal">
                             <div class="left_p">
                                 <div class="prof_pic">
@@ -91,10 +96,6 @@
                                     <h4>AA</h4>
                                 </div>
 
-                                <div class="other_card">
-                                    <p>age</p>
-                                    <h4>21</h4>
-                                </div>
 
                               
                             </div>
@@ -127,7 +128,7 @@
 
 
 
-                    <div class="app_block">
+                    <div class="app_block" id="port">
                         <h1>Appointments</h1>
 
                         <div class="apps">
@@ -135,45 +136,25 @@
                                 <h4>Re: Appointment</h4>
 
                                 <div class="app_text">
-                                    <p>You have been scheduled a general appointment with Dr. <span>William Tosin</span>. Be at the designated venue at the designated time</p>
+                                    <p>You have been scheduled a general appointment at the venue <span>LASUTH</span>. Be at the designated venue at the designated time</p>
                                 </div>
 
                                 <div class="venue">
-                                    <i class="fa-solid fa-location-dot"> <span>GRA medical center</span></i>
+                                    <i class="fa-solid fa-location-dot"> <span>Lagos state university Lekki</span></i>
                                 </div>
 
                                 <div class="time">
                                     <i class="fa-regular fa-clock"></i> <span>20/01/2025,  15:30</span>
                                 </div>
 
-                                <button class="cancel">cancel</button>
+                                <!-- <button class="cancel">cancel</button> -->
                             </div>
                         </div>
                     </div>
 
-                    <div class="prescription_block">
-                       <h1>Prescriptions</h1>
+               
 
-                       <div class="presc">
-                            <div class="presc_card">
-                                <h4>Re: Prescriptions <span>01/05/2024</span></h4>
-
-                                <ul>
-                                    <li>Ibuprofene 20mg caplets</li>
-                                    <li>paracetamol caplets 500mg</li>
-                                    <li>amitriptyline tablets 10mg</li>
-                                </ul>
-                                <div class="venue">
-                                    <i class="fa-solid fa-location-dot"> <span>Pharmacy:  GRA medical center</span></i>
-                                </div>
-                                
-                            </div>
-
-                         
-                       </div>
-                    </div>
-
-                    <div class="diagnosis_block">
+                    <div class="diagnosis_block" id="port">
                         <h1>Diagnosis</h1>
 
                         <div class="diag_box">
@@ -193,7 +174,29 @@
                         </div>
                     </div>
 
-                    <div class="referral_block">
+                    <div class="prescription_block" id="port">
+                        <h1>Prescriptions</h1>
+ 
+                        <div class="presc">
+                             <div class="presc_card">
+                                 <h4>Re: Prescriptions <span>01/05/2024</span></h4>
+ 
+                                 <ul>
+                                     <li>Ibuprofene 20mg caplets</li>
+                                     <li>paracetamol caplets 500mg</li>
+                                     <li>amitriptyline tablets 10mg</li>
+                                 </ul>
+                                 <div class="venue">
+                                    <i class="fa-solid fa-signature"></i><span>Signed: Admin</span></i>
+                                 </div>
+                                 
+                             </div>
+ 
+                          
+                        </div>
+                     </div>
+
+                    <div class="referral_block" id="port">
                         <h1>Referrals</h1>
 
                         <div class="referral_card">
@@ -210,4 +213,6 @@
         </div>
     </div>
 </body>
+<script src="js/portal.js"></script>
+<script src="js/session.js"></script>
 </html>

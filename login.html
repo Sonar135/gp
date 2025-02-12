@@ -10,10 +10,14 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div class="message">
+        
+    </div>
     
     <div class="header">
-        <div class="left_head">
-
+        <div class="logo_cont">
+            <img src="images\IMG-20250208-WA0018-removebg-preview (1).png" alt="">
         </div>
 
         <div class="right_head">
@@ -34,22 +38,22 @@
             <div class="cent">
                 <h1>Sign in</h1>
 
-             <form action="" id="consult_form">  <div class="form_cont">
+             <form action="" id="login_form">  <div class="form_cont">
                     <div class="input_cont">
-                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Email" id="data" name="email">
                     </div>
 
                   
 
                   
                     <div class="input_cont">
-                        <input type="text" placeholder="Password">
+                        <input type="text" placeholder="Password" id="data" name="password">
                     </div>
 
               
                 
 
-                    <button>Login</button>
+                    <button disabled="disabled" id="btn">Login</button>
 
                     <a href="signup.html">I don't have an account</a>
 
@@ -58,4 +62,5 @@
         </div>
     </div>
 </body>
+<script src="js/login.js"></script>
 </html>

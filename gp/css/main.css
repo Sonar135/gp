@@ -1,0 +1,118 @@
+.sec1{
+    width:100%;
+    height:300px;
+    margin-top: 70px;
+}
+
+.sec1 .cent{
+    max-width:1300px;
+    width:auto;
+    height:100%;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+body{
+    background: #f7f7fb;
+}
+
+.score_card{
+    width:330px;
+    height:140px;
+    display:flex;
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    background: white;
+}
+
+.ico_cont{
+    width:130px;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ico{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:80px;
+    height:80px;
+    border: 2px solid var(--accent);
+    border-radius: 85px;
+}
+
+.ico i{
+    color: var(--accent);
+    font-size:36px;
+}
+
+.text{
+    width:200px;
+    height:100%;
+    padding-top:24px;
+}
+
+
+.text h4{
+    text-align: left;
+    color:var(--accent);
+    font-size:16px;
+    font-weight:700;
+}
+
+
+.text h1{
+    text-align: left;
+    color:var(--accent);
+    font-size:24px;
+    font-weight:700;
+    margin-top:28px;
+}
+
+.app h4, .app h1{
+    color: #5abf97
+}
+
+.app .ico{
+    border: 2px solid #5abf97
+}
+
+.app i{
+    color: #5abf97
+}
+
+.sec2{
+    margin-top:100px;
+    width:100%;
+    min-height:500px;
+    height:auto;
+}
+
+
+.sec2 .cent{
+    width:1300px;
+    min-height:500px;
+    height:auto;
+}
+
+.sec2 h1{
+    text-align: center;
+    color: var(--accent_hover);
+    font-weight:700;
+    font-size:26px;
+}
+
+
+tr{
+    cursor:pointer;
+}
+
+tr:hover td{
+    font-weight:700;
+    color:var(--accent);
+    transition: .2s;
+}
