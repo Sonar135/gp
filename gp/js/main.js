@@ -1,16 +1,17 @@
-let trs= document.querySelectorAll("tbody tr")
+
 let tbody=document.querySelector("#tbody")
 
 
-trs.forEach(tr=>{
-    tr.addEventListener("click", ()=>{
-        window.location.href="query.html?v=1";
-    })
-})
+
 
 
 document.querySelector(".pat").addEventListener("click", ()=>{
     window.location.href="patients.html";
+})
+
+
+document.querySelector(".app").addEventListener("click", ()=>{
+    window.location.href="app.html";
 })
 
 fetch("../backend/get_report.php", {
@@ -19,19 +20,37 @@ fetch("../backend/get_report.php", {
 
 .then(res=>res.json()).then(data=>{
 
-    data.forEach(datum=>{
-        tbody.innerHTML=`
+    if(data.status==="empty"){
+        console.log("empty")
+    }
 
-        <tr>
-                               
-                                  <td> ${datum.name} </td>
-                                  <td>${datum.email} </td>
-                                  <td>${datum.phone} </td>
-                                  <td>${datum.date} </td>
-                                  <td>${datum.time}</td>
-                                </tr> 
-      `
-    })
+
+    else{
+        data.forEach((datum) => {
+            // Create a new row element
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${datum.name}</td>
+                <td>${datum.email}</td>
+                <td>${datum.phone}</td>
+                <td>${datum.date}</td>
+                <td>${datum.time}</td>
+            `;
+        
+            // Attach the event listener directly to this row
+            tr.addEventListener("click", () => {
+                window.location.href = `query.html?v=${datum.id}`;
+            });
+        
+            // Append the row to tbody
+            tbody.appendChild(tr);
+        });
+        
+
+
+    }
+
+
 
 })
 

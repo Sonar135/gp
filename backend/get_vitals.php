@@ -1,13 +1,14 @@
 <?php
 
     include "connect.php";
+    session_start();
 
     if(isset($_SESSION["id"])){
         $email=$_SESSION["email"];
         $name=$_SESSION["name"];
     }
 
-    $where="";
+    $where = "WHERE 1";
     $filters=[];
 
 
@@ -17,7 +18,7 @@
     }
 
     if (count($filters) > 0) {
-        $where = " AND " . implode(" AND ", $filters);
+        $where.= " AND " . implode(" AND ", $filters);
     }
 
 

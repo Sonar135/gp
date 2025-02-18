@@ -19,9 +19,24 @@ datas.forEach((datum, i)=> {
    
 });
 
+fetch("backend/user_session.php", {
+    method:"GET"
+})
 
-read[0].value=user
-read[1].value=email
+.then(res=>res.json()).then(session_data=>{
+    if(session_data.status=="logged in"){
+       
+
+      let user= session_data.name
+      let email=session_data.email
+
+       read[0].value=user
+       read[1].value=email
+    }
+
+})
+
+
 
 
 

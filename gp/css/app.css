@@ -1,0 +1,19 @@
+.sec1{
+    width:100%;
+    min-height:500px;
+    height:auto;
+    margin-top:100px;
+}
+
+.sec1 .cent{
+    min-height:500px;
+    height:auto;
+    width:1300px;
+}
+
+.sec1 h1{
+    color:var(--accent_hover);
+    text-align: center;
+    margin:20px 0;
+    font-weight:700;
+}

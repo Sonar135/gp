@@ -1,7 +1,7 @@
 <?php
 
     include "connect.php";
-
+    session_start();
     if(isset($_SESSION["id"])){
         $email=$_SESSION["email"];
         $name=$_SESSION["name"];

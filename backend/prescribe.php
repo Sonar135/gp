@@ -13,7 +13,7 @@
     $meds=$_POST["meds"];
 
 
-    $query=mysqli_query($conn, "INSERT into prescriptions (meds, email, date) values($meds, $patient, CURDATE())");
+    $query=mysqli_query($conn, "INSERT into prescriptions (meds, email, date) values('$meds', '$patient', CURDATE())");
 
 
     

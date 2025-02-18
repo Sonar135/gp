@@ -1,4 +1,6 @@
 
+
+
 fetch("backend/user_session.php", {
     method:"GET"
 })
@@ -7,8 +9,10 @@ fetch("backend/user_session.php", {
     if(session_data.status=="logged in"){
         console.log("logged in")
 
-       let user= session_data.name
-       let email=session_data.email
+       user= session_data.name
+       email=session_data.email
+
+      
     }
 
 
@@ -16,3 +20,5 @@ fetch("backend/user_session.php", {
         window.location.href="login.html"
     }
 })
+
+

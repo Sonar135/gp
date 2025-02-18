@@ -1,23 +1,25 @@
 <?php
 
     include "connect.php";
+    session_start();
 
     if(isset($_SESSION["id"])){
         $email=$_SESSION["email"];
         $name=$_SESSION["name"];
     }
 
-    $where="";
+    $where = "WHERE 1";
     $filters=[];
 
+    $data=[];
 
     if(isset($_GET["v"])){
         $v =   htmlentities( $_GET['v']);
-        $filters[] = "email = '$v'";
+        $filters[] = "id = '$v'";
     }
 
     if (count($filters) > 0) {
-        $where = " AND " . implode(" AND ", $filters);
+        $where.= " AND " . implode(" AND ", $filters);
     }
 
 
@@ -28,11 +30,13 @@
         echo json_encode([
             "status"=>"empty"
         ]);
+
+        exit();
     }
 
     else{
         while($row=mysqli_fetch_assoc($query)){
-            echo json_encode([
+       $data[]=   [
                 "status"=>"success",
                 "name"=>$row["name"],
                 "email"=>$row["email"],
@@ -40,11 +44,14 @@
                 "phone"=>$row["phone"],
                 "time"=>$row["time"],
                 "subject"=>$row["subject"],          
-            ]);
+                "id"=>$row["id"],          
+            ];
         }
     }
 
 
-    
+
+
+    echo json_encode($data);
 
 ?>

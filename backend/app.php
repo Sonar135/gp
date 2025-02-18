@@ -14,9 +14,10 @@
     $hospital=$_POST["hospital"];
     $time=$_POST["time"];
     $date=$_POST["date"];
+    $type=$_POST["app_type"];
 
 
-    $query=mysqli_query($conn, "INSERT into appointments (hospital, email, location, date, time) values($hospital, $patient, $location, $date, $time");
+    $query=mysqli_query($conn, "INSERT into appointments (hospital, email, location, date, time, type) values($hospital, $patient, $location, $date, $time, $type");
 
 
     

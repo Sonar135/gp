@@ -1,6 +1,9 @@
 <?php
 
-        $name=$_POST['email'];
+        include 'functions.php';
+        include 'connect.php';
+
+        $email=$_POST['email'];
         $password=$_POST['password'];
 
 

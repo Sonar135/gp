@@ -31,6 +31,23 @@ table{
     text-align: center;
   }
 
+  td a{
+    border-radius: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    background: var(--accent);
+    width:80px;
+    height:20px;
+    margin:0 auto;
+    font-weight:600;
+  }
+
+  td a:hover{
+    background: var(--accent_hover);
+  }
+
   .in-stock{
     width:70px;
     height:25px;

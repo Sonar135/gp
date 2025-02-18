@@ -156,6 +156,9 @@
     font-weight:700;
     text-align: left;
     margin:20px 0;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .left_p p{

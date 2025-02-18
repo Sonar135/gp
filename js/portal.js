@@ -40,83 +40,91 @@ port_lis.forEach((port_li, i)=>{
 
 
 fetch("backend/get_data.php", {
-    method: "GET",
+    method: "GET"
 })
 
 .then(res=>res.json()).then(data=>{
 
-    other.innerHTML=`
-              <div class="other_card">
-                                    <p>sex</p>
-                                    <h4>${data.gender}</h4>
-                                </div>
+    if(data.status=="success"){
+        other.innerHTML=`
+        <div class="other_card">
+                              <p>sex</p>
+                              <h4>${data.gender}</h4>
+                          </div>
 
-                                <div class="other_card">
-                                    <p>age</p>
-                                    <h4>${data.age}</h4>
-                                </div>
+                          <div class="other_card">
+                              <p>age</p>
+                              <h4>${data.age}</h4>
+                          </div>
 
-                                <div class="other_card">
-                                    <p>blood group</p>
-                                    <h4>${data.bg}</h4>
-                                </div>
+                          <div class="other_card">
+                              <p>blood group</p>
+                              <h4>${data.bg}</h4>
+                          </div>
 
-                                <div class="other_card">
-                                    <p>total appointments</p>
-                                    <h4>45</h4>
-                                </div>
+                          <div class="other_card">
+                              <p>total appointments</p>
+                              <h4>45</h4>
+                          </div>
 
-                                <div class="other_card">
-                                    <p>reg no</p>
-                                    <h4>${data.reg_no}</h4>
-                                </div>
+                          <div class="other_card">
+                              <p>reg no</p>
+                              <h4>${data.reg_no}</h4>
+                          </div>
 
-                                <div class="other_card">
-                                    <p>registered date</p>
-                                    <h4>${data.reg_date}</h4>
-                                </div>
+                          <div class="other_card">
+                              <p>registered date</p>
+                              <h4>${data.reg_date}</h4>
+                          </div>
 
-                                <div class="other_card">
-                                    <p>blood type</p>
-                                    <h4>${data.bt}</h4>
-                                </div>
-    `
-
-
-    left_p.innerHTML=`
-      <div class="prof_pic">
-                                    <i class="fa-regular fa-user"></i>
-                                </div>
-
-                                <h1>${user}</h1>
-                                <p>${email}</p>
-
-                                <a href="">Edit Profile</a>
-    `
+                          <div class="other_card">
+                              <p>blood type</p>
+                              <h4>${data.bt}</h4>
+                          </div>
+`
 
 
-    vital_cont.innerHTML=`
-    
-               <div class="vital_card">
-                                <h4>Blood pressure</h4>
-                               <h1>${data.bp}<span>mm/hg</span></h1>
-                            </div>
 
-                            <div class="vital_card">
-                                <h4>heart rate</h4>
-                               <h1>${data.hr} <span>BPM</span></h1>
-                            </div>
+left_p.innerHTML=`
+<div class="prof_pic">
+                              <i class="fa-regular fa-user"></i>
+                          </div>
 
-                            <div class="vital_card">
-                                <h4>glucose</h4>
-                               <h1>${data.glucose} <span>mg/dl</span></h1>
-                            </div>
+                          <h1>${data.name}</h1>
+                          <p>${data.email}</p>
 
-                            <div class="vital_card">
-                                <h4>cholesterol</h4>
-                               <h1>${data.cholesterol} <span>mg/dl</span></h1>
-                            </div>
-    `
+                          <a href="">Edit Profile</a>
+`
+
+
+vital_cont.innerHTML=`
+
+         <div class="vital_card">
+                          <h4>Blood pressure</h4>
+                         <h1>${data.bp}<span>mm/hg</span></h1>
+                      </div>
+
+                      <div class="vital_card">
+                          <h4>heart rate</h4>
+                         <h1>${data.hr} <span>BPM</span></h1>
+                      </div>
+
+                      <div class="vital_card">
+                          <h4>glucose</h4>
+                         <h1>${data.glucose} <span>mg/dl</span></h1>
+                      </div>
+
+                      <div class="vital_card">
+                          <h4>cholesterol</h4>
+                         <h1>${data.cholesterol} <span>mg/dl</span></h1>
+                      </div>
+`
+    }
+
+
+
+
+
 
 })
 
@@ -215,26 +223,25 @@ fetch("backend/get_presc.php", {
         data.forEach(datum=>{
 
 
+            
 
             let meds=datum.meds.split(",")
-
+            let medication=""
             meds.forEach(med=>{
-                document.querySelector(".presc_card ul").innerHTML=`
-               <li>${med}</li>
-                `
-            })
+                                    
+                medication+=`<li>${med}</li>`
+                 
+             })
 
           
 
-            presc.innerHTML=`
+            presc.innerHTML+=`
         
       <div class="presc_card">
                                  <h4>Re: Prescriptions <span>${datum.date}</span></h4>
  
                                  <ul>
-                                     <li>Ibuprofene 20mg caplets</li>
-                                     <li>paracetamol caplets 500mg</li>
-                                     <li>amitriptyline tablets 10mg</li>
+                                ${medication}
                                  </ul>
 
                                  <div class="venue">
@@ -243,6 +250,9 @@ fetch("backend/get_presc.php", {
                                  
                              </div>
 `
+
+
+
         })
     
     }

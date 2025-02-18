@@ -2,14 +2,28 @@
 
     include "connect.php";
 
+    session_start();
+    
+
+    $where = "WHERE 1";
+    $filters=[];
+
+
     if(isset($_SESSION["id"])){
         $email=$_SESSION["email"];
         $name=$_SESSION["name"];
 
+        $filters[] = "email = '$email'";
     }
 
 
-    $query=mysqli_query($conn, "SELECT * from appointments where email='$email' ");
+
+    if (count($filters) > 0) {
+        $where.= " AND " . implode(" AND ", $filters);
+    }
+
+
+    $query=mysqli_query($conn, "SELECT * from appointments $where ");
 
 
     if(mysqli_num_rows($query)<1){
@@ -27,6 +41,7 @@
                 "date"=>$row["date"],
                 "time"=>$row["time"],
                 "location"=>$row["location"],
+                "type"=>$row["type"],
              
             ]);
         }

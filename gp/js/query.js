@@ -20,7 +20,7 @@ let book_form=document.querySelector("#book_form")
 
 let physical=document.querySelectorAll(".physical");
 
-
+let message=document.querySelector(".message")
 
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -46,13 +46,31 @@ document.querySelectorAll('input[name="app_type"]').forEach((radio) => {
             if(this.value=="online"){
                 physical.forEach(phy=>{
                     phy.style.display="none";
+                    phy.removeAttribute('id');
+
+
+                 
+
+                    
                 })
+                book_data=document.querySelectorAll(".book_form #data")
+
+                const event = new Event("input", { bubbles: true });
+                document.querySelector(".date").dispatchEvent(event);
             }
           
             if(this.value=="physical"){
                 physical.forEach(phy=>{
                     phy.style.display="block";
+                    phy.id='data'
+
+                   
                 })
+
+                book_data=document.querySelectorAll(".book_form #data")
+
+                const event = new Event("input", { bubbles: true });
+                document.querySelector(".date").dispatchEvent(event);
             }
         }
     });
@@ -97,12 +115,8 @@ book_data.forEach((datum, i)=> {
         let allFilled = Array.from(book_data).every((field) => field.value.trim() !== '');
     book_btn.disabled = !allFilled;
 
-    
-
     })
  
-    
-   
 });
 
 
@@ -169,6 +183,9 @@ pre_form.addEventListener("submit", (e)=>{
     .then(res=>res.json()).then(data=>{
         if(data.status=="success"){
             notify("prescription submitted")
+            pre_data.forEach(data=>{
+                data.value=""
+            })
         }
     })
 })
@@ -187,6 +204,10 @@ ref_form.addEventListener("submit", (e)=>{
     .then(res=>res.json()).then(data=>{
         if(data.status=="success"){
             notify("referral sent")
+
+            ref_data.forEach(data=>{
+                data.value=""
+            })
         }
     })
 })
@@ -198,7 +219,7 @@ book_form.addEventListener("submit", (e)=>{
 
     let form_data=new FormData(book_form)
 
-    fetch("../backend/refer.php", {
+    fetch("../backend/app.php", {
         method: "POST",
         body:form_data
     })
@@ -206,6 +227,9 @@ book_form.addEventListener("submit", (e)=>{
     .then(res=>res.json()).then(data=>{
         if(data.status=="success"){
             notify("appointment set")
+            book_data.forEach(data=>{
+                data.value=""
+            })
         }
     })
 })
@@ -216,15 +240,40 @@ fetch(`../backend/get_report.php?v=${patient}`, {
 })
 
 .then(res=>res.json()).then(data=>{
-    if(data.status=="success"){
-      document.querySelector(".query_board").innerHTML=`
+
+    data.forEach(datum=>{
+        document.querySelector(".query_board").innerHTML=`
       
-         <div class="clip_board">
-                <i class="fa-solid fa-comment-medical"></i>
-            </div>
-            ${data.subject}
-      `
-    }
+        <div class="clip_board">
+               <i class="fa-solid fa-comment-medical"></i>
+           </div>
+           ${datum.subject}
+     `
+    })
+
+  
+
+      console.log(data)
+    
+})
+
+
+fetch(`../backend/get_report.php?v=${patient}`, {
+    method:"GET"
+})
+
+.then(res=>res.json()).then(data=>{
+
+    data.forEach(datum=>{
+        document.getElementsByName("patient").forEach(patient=>{
+            patient.value=datum.email
+        })
+    })
+
+  
+
+      console.log(data)
+    
 })
 
 

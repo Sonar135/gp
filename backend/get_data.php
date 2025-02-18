@@ -4,18 +4,20 @@
 
     $email="";
 
+    session_start();
+
     if(isset($_SESSION["id"])){
         $email=$_SESSION["email"];
         $name=$_SESSION["name"];
 
     }
 
-    else{
-        if(isset($_GET["v"])){
-            $email =   htmlentities( $_GET['v']);
-            $filters[] = "email = '$v'";
-        }
+     if(isset($_GET["v"])){
+        $email =   htmlentities( $_GET['v']);
+        $filters[] = "email = '$v'";
     }
+      
+    
   
 
 
@@ -23,8 +25,7 @@
 
     while($row=mysqli_fetch_assoc($query)){
 
-        $query2=mysqli_query($conn, "SELECT id, CONCAT('#', LPAD(id, 4, '0')) AS registration_number 
-FROM users where email='$email'");
+        $query2=mysqli_query($conn, "SELECT id, CONCAT('#', LPAD(id, 4, '0')) AS registration_number FROM users where email='$email'");
     while($row2=mysqli_fetch_assoc($query2)){
         echo json_encode([
             "status"=>"success",
