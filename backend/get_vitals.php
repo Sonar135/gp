@@ -21,6 +21,8 @@
         $where.= " AND " . implode(" AND ", $filters);
     }
 
+    $data=[];
+
 
     $query=mysqli_query($conn, "SELECT * from users $where");
 
@@ -33,18 +35,18 @@
 
     else{
         while($row=mysqli_fetch_assoc($query)){
-            echo json_encode([
+          $data[]= [
                 "status"=>"success",
                 "bp"=>$row["bp"],
                 "hr"=>$row["hr"],
                 "cholesterol"=>$row["cholesterol"],
                 "glucose"=>$row["glucose"],
                 "email"=>$row["email"],
-            ]);
+            ];
         }
     }
 
 
     
-
+    echo json_encode($data)
 ?>

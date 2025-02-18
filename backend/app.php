@@ -17,7 +17,7 @@
     $type=$_POST["app_type"];
 
 
-    $query=mysqli_query($conn, "INSERT into appointments (hospital, email, location, date, time, type) values($hospital, $patient, $location, $date, $time, $type");
+    $query=mysqli_query($conn, "INSERT into appointments (hospital, email, location, date, time, type) values('$hospital', '$patient', '$location', '$date', '$time', '$type')");
 
 
     

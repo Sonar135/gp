@@ -8,7 +8,7 @@
     $hr=$_POST["hr"];
     $patient=$_POST["patient"];
 
-    $query=mysqli_query($conn, "UPDATE users set bp='$bp', cholesterol='$cholesterol', hr='$hr', glucose='$glucose' where email='$patient' ");
+    $query=mysqli_query($conn, "UPDATE users set bp='$bp', cholesterol='$chol', hr='$hr', glucose='$gluc' where email='$patient' ");
 
 
     if($query){

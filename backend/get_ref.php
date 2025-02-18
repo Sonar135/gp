@@ -8,6 +8,8 @@
 
     }
 
+    $data=[];
+
 
     $query=mysqli_query($conn, "SELECT * from referrals where email='$email' ");
 
@@ -16,21 +18,22 @@
         echo json_encode([
             "status"=>"empty"
         ]);
+
     }
 
     else{
         while($row=mysqli_fetch_assoc($query)){
-            echo json_encode([
+           $data[]= [
                 "status"=>"success",
                 "hospital"=>$row["hospital"],
                 "email"=>$row["email"],
                 "date"=>$row["date"],
                 "location"=>$row["location"],          
-            ]);
+            ];
         }
     }
 
 
     
-
+    echo json_encode($data)
 ?>

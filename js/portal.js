@@ -174,38 +174,38 @@ fetch("backend/get_app.php", {
 
 
 
-fetch("backend/get_diagnosis.php", {
-    method: "GET",
-})
+// fetch("backend/get_diagnosis.php", {
+//     method: "GET",
+// })
 
-.then(res=>res.json()).then(data=>{
+// .then(res=>res.json()).then(data=>{
 
-    if(data.status=="empty"){
-        diag_box.innerHTML="<h1>No Record</h1>"
-    }
+//     if(data.status=="empty"){
+//         diag_box.innerHTML="<h1>No Record</h1>"
+//     }
 
-    else{
+//     else{
 
-        data.forEach(datum=>{
-            diag_box.innerHTML=`
+//         data.forEach(datum=>{
+//             diag_box.innerHTML=`
         
-       <div class="diag_card">
-                                <h4>${datum.date}</h4>
+//        <div class="diag_card">
+//                                 <h4>${datum.date}</h4>
 
-                                <div class="symptoms">
-                                 <p> <span>Symptoms: </span> ${datum.symptoms}</p>  
-                                </div>
+//                                 <div class="symptoms">
+//                                  <p> <span>Symptoms: </span> ${datum.symptoms}</p>  
+//                                 </div>
 
-                                <div class="diagnosis">
-                                    <p> <span>Diagnosis: </span>${datum.diagnosis}</p>  
-                                   </div>
-                            </div>
-`
-        })
+//                                 <div class="diagnosis">
+//                                     <p> <span>Diagnosis: </span>${datum.diagnosis}</p>  
+//                                    </div>
+//                             </div>
+// `
+//         })
     
-    }
+//     }
 
-})
+// })
 
 
 fetch("backend/get_presc.php", {

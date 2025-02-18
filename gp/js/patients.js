@@ -1,11 +1,4 @@
 
-let patient_cards=document.querySelectorAll(".patient_card")
-
-patient_cards.forEach(patient_card=>{
-  patient_card.addEventListener("click", ()=>{
-      window.location.href=`patient.html?v=2`
-  })
-})
 
 
 

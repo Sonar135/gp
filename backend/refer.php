@@ -14,7 +14,7 @@
     $hospital=$_POST["hospital"];
 
 
-    $query=mysqli_query($conn, "INSERT into referrals (hospital, email, location, date) values($hospital, $patient, $location, CURDATE())");
+    $query=mysqli_query($conn, "INSERT into referrals (hospital, email, location, date) values('$hospital', '$patient', '$location', CURDATE())");
 
 
     

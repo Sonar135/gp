@@ -9,7 +9,9 @@
     // }
 
 
-    $query=mysqli_query($conn, "SELECT * from users where ");
+    $data=[];
+
+    $query=mysqli_query($conn, "SELECT * from users ");
 
 
     if(mysqli_num_rows($query)<1){
@@ -18,6 +20,8 @@
         ]);
     }
 
+
+
     else{
         while($row=mysqli_fetch_assoc($query)){
 
@@ -25,12 +29,12 @@
 FROM users");
 
 while($row2=mysqli_fetch_assoc($query2)){
-    echo json_encode([
+     $data[]= [
         "status"=>"success",
         "name"=>$row["name"],
         "email"=>$row["email"],
         "reg_no"=>$row2["registration_number"],
-    ]);
+    ];
 
 }
           
@@ -39,5 +43,5 @@ while($row2=mysqli_fetch_assoc($query2)){
 
 
     
-
+echo json_encode($data)
 ?>

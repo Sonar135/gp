@@ -23,6 +23,8 @@
     }
 
 
+    $data=[];
+
     $query=mysqli_query($conn, "SELECT * from appointments $where ");
 
 
@@ -34,7 +36,7 @@
 
     else{
         while($row=mysqli_fetch_assoc($query)){
-            echo json_encode([
+          $data[]= [
                 "status"=>"success",
                 "hospital"=>$row["hospital"],
                 "email"=>$row["email"],
@@ -43,9 +45,11 @@
                 "location"=>$row["location"],
                 "type"=>$row["type"],
              
-            ]);
+            ];
         }
     }
 
+
+    echo json_encode($data)
 
 ?>
