@@ -27,6 +27,34 @@ body{
     background: white;
 }
 
+.pat:hover{
+    background: var(--accent);
+}
+
+.app:hover{
+    background: #7fbf97;
+}
+
+.pat:hover .ico i, .pat:hover .text h4, .pat:hover .text h1{
+    color: white;
+}
+
+.pat:hover .ico{
+    border: 2px solid white;
+}
+
+
+
+.app:hover .ico i, .app:hover .text h4, .app:hover .text h1{
+    color: white;
+}
+
+.app:hover .ico{
+    border: 2px solid white;
+}
+
+
+
 .ico_cont{
     width:130px;
     height:100%;
@@ -115,4 +143,12 @@ tr:hover td{
     font-weight:700;
     color:var(--accent);
     transition: .2s;
+}
+
+.pat{
+    cursor:pointer;
+}
+
+.app{
+    cursor: pointer;
 }

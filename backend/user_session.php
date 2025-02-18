@@ -11,7 +11,8 @@
         $data=[
             "status"=> "logged in",
             "email"=> $email,
-            "name"=> $name
+            "name"=> $name,
+            "type"=> "patient",
         ];
     }
 

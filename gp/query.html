@@ -9,15 +9,20 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <div class="message">
+        
+    </div>
 
     <div class="ac_overlay">
-      <form action=""> <div class="form pre_form">
+      <form action="" id="pre_form"> <div class="form pre_form">
 
             <h1>Prescriptions</h1>
-            <input type="text" placeholder="amitryptiline 20mg">
+            <input type="hidden" value="patient" name="patient">
+            <input type="text" placeholder="amitryptiline 20mg" id="pre_data" name="meds">
 
-            <div class="button">
-                <button>Submit</button>
+            <div class="button">     
+                <button id="pre_btn" disabled>Submit</button>
                 <div class="cancel pre_cancel">
                     Cancel
                 </div>
@@ -25,13 +30,14 @@
         </div></form> 
 
 
-    <form action="">   <div class="form ref_form">
+    <form action="" id="ref_form">   <div class="form ref_form">
             <h1>Refer</h1>
-            <input type="text" placeholder="Hospital">
-            <input type="text" placeholder="Location / Address">
+            <input type="hidden" value="patient" name="patient">
+            <input type="text" placeholder="Hospital" id="ref_data" name="hospital">
+            <input type="text" placeholder="Location / Address" id="ref_data" name="location">
 
             <div class="button">
-                <button>Submit</button>
+                <button id="ref_btn" disabled>Submit</button>
                 <div class="cancel re_cancel">
                     Cancel
                 </div>
@@ -39,16 +45,31 @@
         </div></form> 
 
 
-      <form action=""> <div class="form book_form">
+      <form action="" id="book_form"> <div class="form book_form">
             <h1>Book Appointment</h1>
+
+         
+
+            <div class="radio">
+                <label for="physical">
+                    <input type="radio" name="app_type" id="physical" value="physical" checked>
+                    Physical
+                </label>
+
+                <label for="Online">
+                    <input type="radio" name="app_type" id="Online" value="online">
+                    Online
+                </label>
+            </div>
             <h4>Date</h4>
-            <input type="Date" placeholder="Hospital">
+            <input type="Date"  id="data" name="date">
             <h4>Time</h4>
-            <input type="Time" placeholder="Hospital">
-            <input type="text" placeholder="Location / Address">
+            <input type="Time"  id="data" name="time">
+            <input type="text" placeholder="hospital" id="data" name="hospital" class="physical">
+            <input type="text" placeholder="Location / Address" id="data" name="location" class="physical">
 
             <div class="button">
-                <button>Submit</button>
+                <button disabled>Submit</button>
                 <div class="cancel ap_cancel">
                     Cancel
                 </div>

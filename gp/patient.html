@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/b782cf5553.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/portal.css">
+    <link rel="stylesheet" href="css/patient.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="message">
+
+    </div>
+
+    <div class="ac_overlay">
+        <form action="" id="vital_form"> <div class="form vital_form">
+
+            <h1>Vitals</h1>
+            <input type="hidden" value="patient" name="patient" id="patient">
+
+            <div class="title">
+                <h4>blood pressure</h4>
+                <h4>heart rate</h4>
+            </div>
+            <div class="input">
+                <input type="text" placeholder="120/89" id="bp" name="bp">
+                <input type="text" placeholder="120" id="hr" name="hr">
+            </div>
+
+
+            <div class="title">
+                <h4>glucose</h4>
+                <h4>cholesterol</h4>
+            </div>
+            <div class="input">
+                <input type="text" placeholder="97" id="gluc" name="gluc">
+                <input type="text" placeholder="85" id="chol" name="chol">
+            </div>
+           
+
+            <div class="button">     
+                <button>Submit</button>
+                <div class="cancel vital_cancel">
+                    Cancel
+                </div>
+            </div>
+        </div></form> 
+
+            <div class="form test_form">
+                <form action="" enctype="multipart/form-data" id="test_form">
+
+                    <input type="text" placeholder="Test Done" name="test_done">
+                    <input type="file" accept="" hidden id="file">
+
+                    <label for="file" >
+                        <h4 id="file_label">Select File</h4>
+                    </label>
+
+                    <div class="button">     
+                        <button id="test_btn" disabled>Submit</button>
+                        <div class="cancel test_cancel">
+                            Cancel
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+    </div>
+
+
+
+    <div class="header">
+        <div class="logo_cont">
+            <img src="../images\IMG-20250208-WA0018-removebg-preview (1).png" alt="">
+        </div>
+
+        <div class="right_head">
+            <ul>
+                <a href="main.html"><li>Dashboard</li></a>
+               <a href="services.html"> <li>Online Consultations</li></a>
+                <a href="login.html"><li>Logout</li></a>              
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sec1">
+
+        <div class="cent">
+            
+                <div class="sec_block">
+                    <div class="profile" id="port">
+                        <div class="personal">
+                            <div class="left_p">
+                                <div class="prof_pic">
+                                    <i class="fa-regular fa-user"></i>
+                                </div>
+        
+                                <h1>Efidi Victor</h1>
+                                <p>vefidi135@gmail.com</p>
+        
+                               <div class="btn vitals">Update Vitals</div>
+                            </div>
+        
+                            <div class="other">
+                                <div class="other_card">
+                                    <p>sex</p>
+                                    <h4>female</h4>
+                                </div>
+        
+                                <div class="other_card">
+                                    <p>age</p>
+                                    <h4>21</h4>
+                                </div>
+        
+                                <div class="other_card">
+                                    <p>blood group</p>
+                                    <h4>a+</h4>
+                                </div>
+        
+                                <div class="other_card">
+                                    <p>total appointments</p>
+                                    <h4>45</h4>
+                                </div>
+        
+                                <div class="other_card">
+                                    <p>reg no</p>
+                                    <h4>#0024</h4>
+                                </div>
+        
+                                <div class="other_card">
+                                    <p>registered date</p>
+                                    <h4>01/04/2024</h4>
+                                </div>
+        
+                                <div class="other_card">
+                                    <p>blood type</p>
+                                    <h4>AA</h4>
+                                </div>
+        
+        
+                              
+                            </div>
+                        </div>
+        
+                       <h1 class="vital">Patient Vitals</h1>
+        
+                       <div class="vital_cont">
+                            <div class="vital_card">
+                                <h4>Blood pressure</h4>
+                               <h1>120/89 <span>mm/hg</span></h1>
+                            </div>
+        
+                            <div class="vital_card">
+                                <h4>heart rate</h4>
+                               <h1>120 <span>BPM</span></h1>
+                            </div>
+        
+                            <div class="vital_card">
+                                <h4>glucose</h4>
+                               <h1>97 <span>mg/dl</span></h1>
+                            </div>
+        
+                            <div class="vital_card">
+                                <h4>cholesterol</h4>
+                               <h1>85 <span>mg/dl</span></h1>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+           
+      
+        </div>
+    </div>
+
+    <div class="sec2">
+        <div class="cent">
+            <div class="btn test">upload test</div>
+        </div>
+    </div>
+</body>
+<script src="js/patient.js"></script>
+</html>

@@ -6,7 +6,7 @@ let vital_cont=document.querySelector(".vital_cont")
 let apps=document.querySelector(".apps")
 let diag_box=document.querySelector(".diag_box")
 let presc=document.querySelector(".presc")
-let referral_block=document.querySelector(".referral_block")
+let ref=document.querySelector(".referral_block")
 
 port_lis.forEach((port_li, i)=>{
 
@@ -242,6 +242,37 @@ fetch("backend/get_presc.php", {
                                  </div>
                                  
                              </div>
+`
+        })
+    
+    }
+
+})
+
+
+fetch("backend/get_ref.php", {
+    method: "GET",
+})
+
+.then(res=>res.json()).then(data=>{
+
+    if(data.status=="empty"){
+        ref.innerHTML="<h1>No Record</h1>"
+    }
+
+    else{
+
+        data.forEach(datum=>{
+            ref.innerHTML=`
+        
+ <div class="referral_card">
+                            <h4>${datum.date}</h4>
+
+                            <p>You have been referred to ${datum.hospital} to continue the management and care of your medical condition. Please ensure you bring along your medical records, and test results</p>
+                            <div class="venue">
+                                <i class="fa-solid fa-location-dot"> <span>${datum.location}</span></i>
+                            </div>
+                        </div>
 `
         })
     
