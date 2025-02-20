@@ -247,8 +247,12 @@ fetch(`../backend/get_report.php?v=${patient}`, {
         <div class="clip_board">
                <i class="fa-solid fa-comment-medical"></i>
            </div>
-           ${datum.subject}
+
+          <p>${datum.subject}</p> 
      `
+
+
+     document.querySelector("#name").textContent=datum.name
     })
 
   

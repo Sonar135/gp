@@ -55,3 +55,35 @@ fetch("../backend/get_report.php", {
 })
 
 
+
+
+
+fetch("../backend/patients.php", {
+    method:"GET"
+})
+
+.then(res=>res.json()).then(data=>{
+
+    data.forEach(datum=>{
+        document.querySelector("#patients").textContent=datum.total
+    })
+
+  
+
+})
+
+
+
+fetch("../backend/get_app.php", {
+    method:"GET"
+})
+
+.then(res=>res.json()).then(data=>{
+
+    data.forEach(datum=>{
+        document.querySelector("#apps").textContent=datum.total
+    })
+
+  
+
+})

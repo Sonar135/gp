@@ -1,47 +1,33 @@
 <?php
 
-    include "connect.php";
+include "connect.php";
 
-    // if(isset($_SESSION["id"])){
-    //     $email=$_SESSION["email"];
-    //     $name=$_SESSION["name"];
+$data = [];
 
-    // }
+$query = mysqli_query($conn, "SELECT id, name, email, CONCAT('#', LPAD(id, 4, '0')) AS registration_number FROM users");
 
+$num_row = mysqli_num_rows($query);
 
-    $data=[];
+if ($num_row < 1) {
+    echo json_encode([
+        "status" => "empty"
+    ]);
+    exit(); // Stop further execution
+} 
 
-    $query=mysqli_query($conn, "SELECT * from users ");
-
-
-    if(mysqli_num_rows($query)<1){
-        echo json_encode([
-            "status"=>"empty"
-        ]);
-    }
-
-
-
-    else{
-        while($row=mysqli_fetch_assoc($query)){
-
-            $query2=mysqli_query($conn, "SELECT id, CONCAT('#', LPAD(id, 4, '0')) AS registration_number 
-FROM users");
-
-while($row2=mysqli_fetch_assoc($query2)){
-     $data[]= [
-        "status"=>"success",
-        "name"=>$row["name"],
-        "email"=>$row["email"],
-        "reg_no"=>$row2["registration_number"],
-    ];
-
+else{
+    while ($row = mysqli_fetch_assoc($query)) {
+        $data[] = [
+            "status" => "success",
+            "name" => $row["name"],
+            "email" => $row["email"],
+            "reg_no" => $row["registration_number"],
+            "total" => $num_row
+        ];
+    } 
 }
-          
-        }
-    }
 
 
-    
-echo json_encode($data)
+
+echo json_encode($data);
 ?>

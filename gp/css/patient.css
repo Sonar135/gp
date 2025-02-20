@@ -61,7 +61,7 @@
     margin-top:70px;
     display:none;
     animation: smooth .5s ease-in-out;
-    z-index: 9999999999;
+    z-index:999;
 }
 
 

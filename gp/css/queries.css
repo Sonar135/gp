@@ -125,7 +125,7 @@
     margin-top:70px;
     display:none;
     animation: smooth .5s ease-in-out;
-    z-index: 9999999999;
+    z-index: 9999;
 }
 
 
@@ -261,4 +261,11 @@ input[type='radio']{
     height:auto;
     margin:0 20px;
     accent-color: var(--accent);
+}
+
+
+.query_board p{
+    text-align: center;
+    color:white;
+    font-weight:600;
 }

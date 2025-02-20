@@ -42,7 +42,7 @@ login.addEventListener("submit", (e)=>{
 
 
     
-    fetch("backend/login.php", {
+    fetch("../backend/gp_login.php", {
         method: "POST",
         body:form_data
     })
@@ -53,7 +53,7 @@ login.addEventListener("submit", (e)=>{
         }
 
         else{
-            datas[1].value=""
+            datas[5].value=""
             notify("user does not exist");
         }
     })

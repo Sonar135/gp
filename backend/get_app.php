@@ -28,6 +28,8 @@
     $query=mysqli_query($conn, "SELECT * from appointments $where ");
 
 
+    $num_row=mysqli_num_rows($query);
+
     if(mysqli_num_rows($query)<1){
         echo json_encode([
             "status"=>"empty"
@@ -44,7 +46,7 @@
                 "time"=>$row["time"],
                 "location"=>$row["location"],
                 "type"=>$row["type"],
-             
+                "total" => $num_row,
             ];
         }
     }

@@ -20,9 +20,10 @@
                 <a href="main.html"><li>Home</li></a>
                <a href="services.html"> <li>services</li></a>
                <a href="portal.html"><li>portal</li></a> 
-                <a href="book.html"><li>book appointment</li></a>
-                <a href="login.html"><li>Login</li></a>              
-                <li></li>
+               <a href="book.html"><li>report health</li></a>
+                <a href="login.html" id="login"><li>Login</li></a>              
+                           
+           
             </ul>
         </div>
     </div>
@@ -34,7 +35,7 @@
                     <li id="port_li"><i class="fa-regular fa-user"></i> <span>Profile</span></li>
                     <li id="port_li"><i class="fa-regular fa-calendar-check"></i> <span>Appointments</span></li>
                     <!-- <li id="port_li"><i class="fa-solid fa-stethoscope"></i></i> <span>Diagnosis</span></li> -->
-                    <li><i class="fa-solid fa-file-waveform"></i> <span>Test Results</span></li>
+                    <li id="port_li"><i class="fa-solid fa-file-waveform"></i> <span>Test Results</span></li>
                     <li id="port_li"><i class="fa-solid fa-capsules"></i><span>Prescriptions</span></li>
                     <li id="port_li"><i class="fa-solid fa-retweet"></i> <span>Referrals</span></li>
                 </ul>
@@ -132,7 +133,7 @@
                         <h1>Appointments</h1>
 
                         <div class="apps">
-                            <div class="app_card">
+                            <!-- <div class="app_card">
                                 <h4>Re: Appointment</h4>
 
                                 <div class="app_text">
@@ -147,32 +148,34 @@
                                     <i class="fa-regular fa-clock"></i> <span>20/01/2025,  15:30</span>
                                 </div>
 
-                                <!-- <button class="cancel">cancel</button> -->
-                            </div>
+                                <button class="cancel">cancel</button>
+                            </div> -->
+                        </div>
+                    </div>
+
+
+                    <div class="diagnosis_block" id="port">
+                        <h1>Test results</h1>
+
+                        <div class="diag_box">
+                          
+                            <!-- <div class="diag_card">
+                                <div class="ico">
+                                    <i class="fa-solid fa-file-waveform"></i>
+                                </div>
+
+                                <h4>Title</h4>
+
+                                <button><i class="fa-solid fa-arrow-down"></i></button>
+                            </div> -->
+
+                            
                         </div>
                     </div>
 
                
 
-                    <!-- <div class="diagnosis_block" id="port">
-                        <h1>Diagnosis</h1>
-
-                        <div class="diag_box">
-                            <div class="diag_card">
-                                <h4>01/03/2023</h4>
-
-                                <div class="symptoms">
-                                 <p> <span>Symptoms: </span> runny nose, headache, severe fever, stomach ache</p>  
-                                </div>
-
-                                <div class="diagnosis">
-                                    <p> <span>Diagnosis: </span>Malaria</p>  
-                                   </div>
-                            </div>
-
-                            
-                        </div>
-                    </div> -->
+               
 
                     <div class="prescription_block" id="port">
                         <h1>Prescriptions</h1>
@@ -187,14 +190,14 @@
                     <div class="referral_block" id="port">
                         <h1>Referrals</h1>
 
-                        <div class="referral_card">
+                        <!-- <div class="referral_card">
                             <h4>01/05/2024</h4>
 
                             <p>You have been referred to Lagos University Teaching Hospital (LUTH) to continue the management and care of your medical condition. Please ensure you bring along your medical records, and test results</p>
                             <div class="venue">
                                 <i class="fa-solid fa-location-dot"> <span>Idi-Araba, Mushin Lagos, Nigeria.</span></i>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -203,4 +206,5 @@
 </body>
 <script src="js/portal.js"></script>
 <script src="js/session.js"></script>
+<script src="js/logout.js"></script>
 </html>

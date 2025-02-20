@@ -146,7 +146,7 @@
 
             echo json_encode([
                 'status' => 'success',
-                'redirect_url' => 'main.html'
+                'redirect_url' => 'portal.html'
             ]);
         }
     }
@@ -172,10 +172,10 @@
 
 
 
-    function rest_exists($conn, $name){
+    function gp_exists($conn, $email){
         $result;
     
-        $query="SELECT * FROM restaurant WHERE name=?";
+        $query="SELECT * FROM gp WHERE email=?";
     
         $stmt=mysqli_stmt_init($conn);
 
@@ -185,7 +185,7 @@
         }
     
         
-        mysqli_stmt_bind_param($stmt, "s", $name);
+        mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
         $result= mysqli_stmt_get_result($stmt);
     
@@ -202,10 +202,10 @@
     }
 
 
-    function create_restaurant($conn, $email, $fname,  $phone, $password, $confirm ){
-        $user_type="restaurant";
+    function create_gp($conn, $email, $password ){
+    
   
-        $insert= "INSERT INTO restaurant (name,  phone, email,  password, user_type) VALUES (?,?,?,?,?)";
+        $insert= "INSERT INTO gp ( email,  password) VALUES (?,?)";
 
         $stmt2=mysqli_stmt_init($conn);
 
@@ -217,11 +217,13 @@
         
         $hashed_pwd=password_hash($password, PASSWORD_DEFAULT);
 
-        mysqli_stmt_bind_param($stmt2, 'sssss', $fname, $phone,  $email,  $hashed_pwd, $user_type);
+        mysqli_stmt_bind_param($stmt2, 'ss',  $email,  $hashed_pwd);
         mysqli_stmt_execute($stmt2);
         mysqli_stmt_close($stmt2);
         
-        header("location: res_auth.php?error=success");
+        echo json_encode([
+            "status"=>"success"
+        ]);
         exit();
     }
 
@@ -253,8 +255,8 @@
     }
 
 
-    function res_login($conn, $name, $password){
-        $uidexist= rest_exists($conn, $name);
+    function gp_login($conn, $email, $password){
+        $uidexist= gp_exists($conn, $email);
 
         if($uidexist===false){
             header("location: res_auth.php?error=wrongLogin");
@@ -270,18 +272,21 @@
         }
 
         else if($checkedpwd===true){
+
             session_start();
 
-            $_SESSION["id"]=$uidexist["id"];
+            // $_SESSION["id"]=$uidexist["id"];
             $_SESSION["email"]=$uidexist["email"];
-            $_SESSION['name']=$uidexist['name'];
-            $_SESSION['user_type']=$uidexist['user_type'];
+            
           
      
    
          
 
-            header("location: stock.php");
+            echo json_encode([
+                'status' => 'success',
+                'redirect_url' => 'main.html'
+            ]);
             exit();
         }
     }

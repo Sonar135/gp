@@ -9,12 +9,13 @@ fetch("../backend/get_app.php", {
     data.forEach(datum=>{
 
         let type=datum.type=="physical"?"physical":`<a href=""> Online</a>`
-        tbody.innerHTML=`
+        let hospital=datum.type=="online"?"online":`${datum.hospital}` 
+        tbody.innerHTML+=`
 
         <tr>
                                
                                   <td> ${datum.email} </td>
-                                  <td>${datum.hospital} </td>
+                                  <td>${hospital} </td>
                                   <td>${datum.date} </td>
                                   <td>${datum.time} </td>
                                   <td>${type}</td>

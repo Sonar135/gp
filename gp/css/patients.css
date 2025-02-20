@@ -25,6 +25,12 @@
     cursor: pointer;
 }
 
+.patient_card h4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .ico_cont{
     width:100%;
     height:100px;

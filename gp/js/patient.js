@@ -220,6 +220,10 @@ vital_form.addEventListener("submit", (e)=>{
 
         if(data.status=="success"){
             notify("updated")
+
+            setTimeout(()=>{
+                location.reload()
+            }, 600)
         }
 
 

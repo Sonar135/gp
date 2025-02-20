@@ -24,7 +24,7 @@ port_lis.forEach((port_li, i)=>{
                     port.style.display="none"
                 }
             })
-        }, 1600)
+        }, 800)
 
      
 
@@ -146,17 +146,20 @@ fetch("backend/get_app.php", {
     else{
 
         data.forEach(datum=>{
-            apps.innerHTML=`
+
+            let venue=datum.type=="online"?"online":`at the center ${datum.hospital}` 
+            let location=datum.type=="online"?`<a href="consultation.html?v=''">online</a>`:`at the center ${datum.location}` 
+            apps.innerHTML+=`
         
             <div class="app_card">
                        <h4>Re: Appointment</h4>
 
                        <div class="app_text">
-                           <p>You have been scheduled a general appointment at the center <span>${datum.hospital}</span>. Be at the designated venue at the designated time</p>
+                           <p>You have been scheduled a general appointment <span>${venue}</span>. Be at the designated venue at the designated time</p>
                        </div>
 
                        <div class="venue">
-                           <i class="fa-solid fa-location-dot"> <span>${datum.location}</span></i>
+                           <i class="fa-solid fa-location-dot"> <span>${location}</span></i>
                        </div>
 
                        <div class="time">
@@ -245,7 +248,7 @@ fetch("backend/get_presc.php", {
                                  </ul>
 
                                  <div class="venue">
-                                    <i class="fa-solid fa-signature"></i><span>Signed: Admin</span></i>
+                                    <i class="fa-solid fa-signature"></i><span>Signed: General Practitioner</span></i>
                                  </div>
                                  
                              </div>
@@ -273,12 +276,12 @@ fetch("backend/get_ref.php", {
     else{
 
         data.forEach(datum=>{
-            ref.innerHTML=`
+            ref.innerHTML+=`
         
  <div class="referral_card">
                             <h4>${datum.date}</h4>
 
-                            <p>You have been referred to ${datum.hospital} to continue the management and care of your medical condition. Please ensure you bring along your medical records, and test results</p>
+                            <p>You have been referred to <span>${datum.hospital}</span>  to continue the management and care of your medical condition. Please ensure you bring along your medical records, and test results</p>
                             <div class="venue">
                                 <i class="fa-solid fa-location-dot"> <span>${datum.location}</span></i>
                             </div>
@@ -289,3 +292,41 @@ fetch("backend/get_ref.php", {
     }
 
 })
+
+
+
+fetch("backend/get_test.php", {
+    method: "GET",
+})
+.then(res => res.json())
+.then(data => {
+    if (data.status == "empty") {
+        ref.innerHTML = "<h1>No Record</h1>";
+    } else {
+        diag_box.innerHTML = ""; // Clear previous content
+
+        data.forEach(datum => {
+            // Create a new div for the test record
+            const card = document.createElement("div");
+            card.classList.add("diag_card");
+
+            // Add HTML content to the card
+            card.innerHTML = `
+                <div class="ico">
+                    <i class="fa-solid fa-file-waveform"></i>
+                </div>
+                <h4>${datum.test}</h4>
+                <button><i class="fa-solid fa-arrow-down"></i></button>
+            `;
+
+            // Select the button inside this specific card and add an event listener
+            const button = card.querySelector("button");
+            button.addEventListener("click", () => {
+                window.location.href = `download.php?id=${datum.id}`;
+            });
+
+            // Append the card to the container
+            diag_box.appendChild(card);
+        });
+    }
+});

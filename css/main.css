@@ -6,6 +6,29 @@
     padding-top:1px;
 }
 
+
+
+.header{
+    background: transparent;
+}
+
+
+.header_bordered{
+    background: var(--accent_hover);
+    animation:flow .3s ease;
+}
+
+
+@keyframes flow {
+    from{
+        background: transparent;
+    }
+
+    to{
+        background: var(--accent_hover);
+    }
+}
+
 .left_1, .righ{
     width:50%;
     height:100%;
