@@ -8,7 +8,7 @@ fetch("../backend/get_app.php", {
 .then(res=>res.json()).then(data=>{
     data.forEach(datum=>{
 
-        let type=datum.type=="physical"?"physical":`<a href=""> Online</a>`
+        let type=datum.type=="physical"?"physical":`<a href="consultation.html?v=''"> Online</a>`
         let hospital=datum.type=="online"?"online":`${datum.hospital}` 
         tbody.innerHTML+=`
 

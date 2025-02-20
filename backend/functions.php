@@ -259,7 +259,9 @@
         $uidexist= gp_exists($conn, $email);
 
         if($uidexist===false){
-            header("location: res_auth.php?error=wrongLogin");
+            echo json_encode([
+                "status"=>"invalid"
+            ]);
             exit();
         }
 
@@ -267,7 +269,9 @@
         $checkedpwd=password_verify($password, $pwdHashed);
 
         if($checkedpwd===false){
-            header("location: res_auth.php?error=wrongLogin");
+            echo json_encode([
+                "status"=>"invalid"
+            ]);
             exit();
         }
 

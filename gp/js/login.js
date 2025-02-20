@@ -53,8 +53,8 @@ login.addEventListener("submit", (e)=>{
         }
 
         else{
-            datas[5].value=""
-            notify("user does not exist");
+            datas[1].value=""
+            notify("wrong gp login");
         }
     })
 })
