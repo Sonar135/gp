@@ -93,7 +93,6 @@ left_p.innerHTML=`
                           <h1>${data.name}</h1>
                           <p>${data.email}</p>
 
-                          <a href="">Edit Profile</a>
 `
 
 
